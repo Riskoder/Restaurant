@@ -68,3 +68,5 @@ pizzas.forEach((pizza) => {
 });
 
 content.appendChild(container);
+
+export { createContainer, createCards };
