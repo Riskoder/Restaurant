@@ -39,8 +39,6 @@ const createCards = (imagePath, pizzaTitle, pizzaInfo) => {
   return card;
 };
 
-const container = createContainer();
-
 const pizzas = [
   {
     image: pizzaImage1,
@@ -58,15 +56,16 @@ const pizzas = [
   },
 ];
 
-pizzas.forEach((pizza) => {
-  const card = createCards(
-    pizza.image,
-    `${pizza.title} ${pizza.price}`,
-    pizza.description
-  );
-  container.appendChild(card);
-});
+export function createMenu() {
+  const container = createContainer();
+  pizzas.forEach((pizza) => {
+    const card = createCards(
+      pizza.image,
+      `${pizza.title} ${pizza.price}`,
+      pizza.description
+    );
+    container.appendChild(card);
+  });
+}
 
 content.appendChild(container);
-
-export { createContainer, createCards };

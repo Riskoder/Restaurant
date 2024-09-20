@@ -1,4 +1,4 @@
-import { content } from '../functions/index.js';
+import { content, createParagraph } from '../functions/index.js';
 
 const days = [
   {
@@ -62,9 +62,3 @@ export const createHomePage = () => {
   content.appendChild(homeInfo);
   content.appendChild(homeSection);
 };
-
-function createParagraph(text) {
-  const paragraph = document.createElement('p');
-  paragraph.textContent = text;
-  return paragraph;
-}
