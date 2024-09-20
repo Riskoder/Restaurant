@@ -1,0 +1,38 @@
+.cards-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
+}
+
+.content-card {
+  display: flex;
+  color: black;
+  background-color: white;
+  border: 1.5px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.7);
+  transform: scale(1.02);
+}
+
+img {
+  border-right: 2px solid black;
+  height: 250px;
+  width: 250px;
+}
+
+.pizza-info {
+  padding: 12px;
+}
+
+.pizza-title {
+  font-size: larger;
+  font-weight: bolder;
+}
