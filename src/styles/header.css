@@ -1,0 +1,28 @@
+.header {
+  padding: 1.25rem;
+  min-width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.nav-bar {
+  margin-left: auto;
+}
+
+.nav-bar > button:not(:last-child) {
+  margin-right: 20px;
+}
+
+.btn {
+  padding: 10px 30px;
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: large;
+  border: none;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0b2942;
+}
