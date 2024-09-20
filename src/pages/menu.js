@@ -1,18 +1,20 @@
-import content from './functions/index.js';
+import { content, renderContent } from '../functions/index.js';
 import pizzaImage1 from '../assets/img/Pizza-Pepperoni.jpg';
 import pizzaImage2 from '../assets/img/napolitana.jpg';
 
 const createContainer = () => {
   const container = document.createElement('div');
   container.classList.add('container');
-
   return container;
 };
 
-const createCards = (imagePath, pizzaTitle, pizzaInfo) => {
-  const card = document.createElement('section');
-  card.classList.add('cards-grid');
+const createCardSection = () => {
+  const section = document.createElement('section');
+  section.classList.add('cards-grid');
+  return section;
+};
 
+const createCards = (imagePath, pizzaTitle, pizzaInfo) => {
   const contentCard = document.createElement('div');
   contentCard.classList.add('content-card');
 
@@ -34,9 +36,7 @@ const createCards = (imagePath, pizzaTitle, pizzaInfo) => {
   contentCard.appendChild(cardImage);
   contentCard.appendChild(cardInfo);
 
-  card.appendChild(contentCard);
-
-  return card;
+  return contentCard;
 };
 
 const pizzas = [
@@ -54,18 +54,50 @@ const pizzas = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, aliquam debitis.',
   },
+  {
+    image: pizzaImage2,
+    title: 'XXXXXXX',
+    price: '$10.00',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, aliquam debitis.',
+  },
+  {
+    image: pizzaImage1,
+    title: 'XXXXXXXX',
+    price: '$10.00',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, aliquam debitis.',
+  },
+  {
+    image: pizzaImage2,
+    title: 'XXXXXXX',
+    price: '$10.00',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, aliquam debitis.',
+  },
+  {
+    image: pizzaImage1,
+    title: 'XXXXXXXX',
+    price: '$10.00',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, aliquam debitis.',
+  },
 ];
 
 export function createMenu() {
+  renderContent();
   const container = createContainer();
+  const section = createCardSection();
+
   pizzas.forEach((pizza) => {
     const card = createCards(
       pizza.image,
       `${pizza.title} ${pizza.price}`,
       pizza.description
     );
-    container.appendChild(card);
+    section.appendChild(card);
   });
-}
 
-content.appendChild(container);
+  container.appendChild(section);
+  content.appendChild(container);
+}
