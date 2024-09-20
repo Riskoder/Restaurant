@@ -1,5 +1,5 @@
-import * as pages from './pages/index.js';
-import * as def from './functions/index.js';
+import * as pages from '../pages/index.js';
+import * as def from '../functions/index.js';
 
 const homeBtn = document.getElementById('home');
 const menuBtn = document.getElementById('menu');
